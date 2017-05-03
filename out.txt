@@ -1,4 +1,3 @@
-Line                          Input                                   Validation 
   0: first = one1 + two2 - three3 / four4 ;                        Valid Assignment.                         
   1: second = one1 * (two2 * three3) ;                             Valid Assignment.                         
   2: second = one1 * (two2 * three3) ;                             Valid Assignment.                         
@@ -7,4 +6,4 @@ Line                          Input                                   Validation
   5: one1 * i8766e98e + bignum                                     Valid Expression.                         
   6: 
 
- => File Validation: Fail
+ File Validation: Fail

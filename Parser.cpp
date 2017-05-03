@@ -1,6 +1,7 @@
 #include "Parser.h"
 #define MAX 256
 
+//This section opens the file "in.txt" automatically and reads it. 
 
 void Parser::examineFile() {
 	
@@ -20,6 +21,8 @@ void Parser::examineFile() {
 	}
 }
 
+//This section here opens out.txt and writes the resulting parsing results of in.txt
+
 void Parser::runFile() {
 
 	char *outFile = new char[MAX]();
@@ -27,12 +30,9 @@ void Parser::runFile() {
 	ofstream outfile(outFile);
 	FILE *outFileName = fopen(outFile, "wb");
 	
-	printf("Read %lu lines \n", fileContent.size());
-	
-	
 	bool pass = true;
 	
-	fprintf(outFileName, "Line                          Input                                   Validation \n");
+	
     for(int j = 0; j < fileContent.size(); j++) {
         
         if(!fileContent[j].empty()) {
@@ -57,8 +57,8 @@ void Parser::runFile() {
 	        fprintf(outFileName, "%3d: \n", j);
         }
     }
-    fprintf(outFileName,"\n => File Validation: %s", pass ? "Pass":"Fail");
-    printf("Done parsing! Written output to out.txt successfully! \n");
+    fprintf(outFileName,"\n File Validation: %s", pass ? "Pass":"Fail");
+    printf("Parsing complete! Check file out.txt for results!! \n");
     outfile.close();
 
 
@@ -66,8 +66,10 @@ void Parser::runFile() {
 }
 
 
-// -------------------chooseVal---------------------
-// Choose an approriate validation for each instruction
+
+// This section looks to make sure the appropriate grammar 
+//is selected for each instruction.
+
 vector<string> Parser::selectValue(vector<string> token) {
     vector<string> result(2), temp(2);
     stringstream ss;

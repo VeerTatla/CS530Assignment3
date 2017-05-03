@@ -53,7 +53,8 @@ bool Grammar::grammarOperators (char operators){
 
 }
 
-//Grammar for charcters from a-Z.
+//Grammar for characters from a-Z also including _ and ( )
+//to the array for ID.
 
 struct characters {
     char character_aToZ;
